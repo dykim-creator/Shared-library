@@ -35,7 +35,7 @@ def call() {
                     scannerHome = tool 'sonar'
                 }
                 steps{
-                    withSonarQubeEnv(credentialsId:"sonarqube",installationName:'sonar') {
+                    withSonarQubeEnv(credentialsId:"sonar_token",installationName:'sonar') {
                             //sh "${scannerHome}/bin/sonar-scanner"
                         sh "${scannerHome}/bin/sonar-scanner \
                                         -Dsonar.projectKey=${env.REPO_NAME} \
